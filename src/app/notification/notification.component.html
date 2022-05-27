@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Notifications</h1>
+<div mat-dialog-content *ngIf="notificMess.length > 0; else empty">
+  <ul>
+    <li *ngFor="let item of notificMess">
+      <div>
+        <span>{{item.name + " по новой цене: " + item.price + ". Успей купить!"}}</span>
+        <button (click)="closeNotific(item)">x</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #empty>
+  <span>Тут пусто :(</span>
+</ng-template>
