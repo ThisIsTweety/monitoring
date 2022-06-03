@@ -17,7 +17,6 @@ export class ProductComponent implements OnInit {
     this.products = this.dataservice.getProducts();
   }
   setNewPrice(newprice: number, pid: number) {
-    //update the corresponding product's price
     this.dataservice.updatePrice(newprice, pid);
     this.dataCart.updatePriceForCard(pid, newprice);
   }
